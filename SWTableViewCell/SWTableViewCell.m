@@ -127,11 +127,21 @@ static NSString * const kTableViewCellContentView = @"UITableViewCellContentView
     return self;
 }
 
+- (void)updateContainingTableView:(UITableView *)containingTableView leftUtilityButtons:(NSArray *)leftUtilityButtons rightUtilityButtons:(NSArray *)rightUtilityButtons
+{
+    self.rightUtilityButtons = rightUtilityButtons;
+    self.leftUtilityButtons = leftUtilityButtons;
+    self.height = containingTableView.rowHeight;
+    self.containingTableView = containingTableView;
+    self.highlighted = NO;
+    [self initializer];
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        [self initializer];
+//        [self initializer];
     }
     
     return self;
