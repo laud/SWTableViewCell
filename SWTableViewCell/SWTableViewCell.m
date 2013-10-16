@@ -81,7 +81,7 @@ static NSString * const kTableViewCellContentView = @"UITableViewCellContentView
         if (utilityButtonsCounter >= 1) utilityButtonXCord = _utilityButtonWidth * utilityButtonsCounter;
         [utilityButton setFrame:CGRectMake(utilityButtonXCord, 0, _utilityButtonWidth, CGRectGetHeight(self.bounds))];
         [utilityButton setTag:utilityButtonsCounter];
-        [utilityButton addTarget:_parentCell action:_utilityButtonSelector forControlEvents:UIControlEventTouchDown];
+        [utilityButton addTarget:_parentCell action:_utilityButtonSelector forControlEvents:UIControlEventTouchUpInside];
         [self addSubview: utilityButton];
         utilityButtonsCounter++;
     }
